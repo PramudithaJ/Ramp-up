@@ -1,0 +1,11 @@
+firstName,lastName,email,carMake,carModel,vin,manufacturedDate
+John,Doe,john.doe@example.com,Toyota,Corolla,1HGCM82633A123456,2015-06-15
+Jane,Smith,jane.smith@example.com,Honda,Civic,2HGFB2F50FH123457,2018-09-25
+Michael,Brown,michael.brown@example.com,Ford,Focus,1FAHP3K26CL123458,2012-03-10
+Emily,Davis,emily.davis@example.com,Chevrolet,Malibu,1G1ZC5E16CF123459,2016-11-20
+David,Wilson,david.wilson@example.com,Nissan,Altima,1N4AL3AP3FC123460,2017-07-30
+Emma,Johnson,emma.johnson@example.com,Hyundai,Elantra,5NPDH4AE4DH123461,2014-05-05
+James,Lee,james.lee@example.com,Kia,Optima,5XXGN4A77CG123462,2013-09-15
+Olivia,Martinez,olivia.martinez@example.com,Volkswagen,Passat,1VWBP7A31CC123463,2019-02-25
+William,Garcia,william.garcia@example.com,Subaru,Impreza,JF1GPAL68DH123464,2011-12-12
+Ava,Anderson,ava.anderson@example.com,Mazda,3,JM1BL1VFXC123465,2020-08-08
