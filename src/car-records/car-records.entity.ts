@@ -1,7 +1,8 @@
-import { Field, Int, ObjectType } from "@nestjs/graphql";
+import { Directive, Field, Int, ObjectType } from "@nestjs/graphql";
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm"
 
 @ObjectType()
+@Directive('@key(fields: "vin")')
 @Entity('car-records')
 export class CarRecord {
 
@@ -35,7 +36,7 @@ carModel : string
 vin : string
 
 @Field()
-@Column({type: 'date' })
+@Column(/*{type: 'date' }*/)
 manufacturedDate : Date
 
 @Field()

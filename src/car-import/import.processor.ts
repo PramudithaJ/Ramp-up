@@ -26,7 +26,18 @@ export class ImportProcessor {
       }
     } catch (error) {
       console.error('Error processing job:', error);
+    } finally {
+      fs.unlink(filepath, (err) => {
+
+        if (err) {
+          console.error(err)
+          return err
+        }
+      }
+    )
+    console.log("file deleted after recording to database")
     }
+
   }
 
   private async parseFile(filepath: string): Promise<any[]> {

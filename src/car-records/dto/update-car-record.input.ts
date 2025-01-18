@@ -4,31 +4,31 @@ import { CreateCarRecordInput } from "./create-car-record.input";
 @InputType()
 export class UpdateCarRecordInput extends PartialType(CreateCarRecordInput){
 
-@Field( type => Int)
-id : number
-
 @Field()
+id : string
+
+@Field({ nullable:true})
 firstName : string
 
-@Field()
+@Field({ nullable:true})
 lastName : string
 
-@Field()
+@Field({ nullable:true})
 email : string
 
-@Field()
+@Field({ nullable:true})
 carMake : string
 
-@Field()
+@Field({ nullable:true})
 carModel : string
 
-@Field()
+@Field({ nullable:true})
 vin : string
 
-@Field()
+@Field({ nullable:true})
 manufacturedDate : Date
 
-@Field()
+@Field({ nullable:true})
 ageOfVehicle : number
 
 }

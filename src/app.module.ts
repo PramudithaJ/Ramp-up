@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CarRecordsModule } from './car-records/car-records.module';
 import { GraphQLModule } from '@nestjs/graphql';
-import { ApolloDriverConfig, ApolloDriver } from '@nestjs/apollo';
+import { ApolloDriverConfig, ApolloDriver, ApolloFederationDriver, ApolloFederationDriverConfig } from '@nestjs/apollo';
 import { join } from 'path';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { CarRecord } from './car-records/car-records.entity';
@@ -12,10 +12,15 @@ import { BullModule } from '@nestjs/bull';
 
 @Module({
   imports: [CarRecordsModule, 
-    GraphQLModule.forRoot<ApolloDriverConfig>({
-      driver: ApolloDriver,
-      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+    GraphQLModule.forRoot<ApolloFederationDriverConfig>({
+      driver: ApolloFederationDriver,
+    autoSchemaFile: { path: "schema.gql", federation: 2 },
+    debug: true,
     }),
+    // GraphQLModule.forRoot<ApolloDriverConfig>({
+    //   driver: ApolloDriver,
+    //   autoSchemaFile: join(process.cwd(), 'schema.gql'),
+    // }),
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',

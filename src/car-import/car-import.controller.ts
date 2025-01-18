@@ -3,6 +3,7 @@ import { CarImportService } from './car-import.service';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
 
+
 @Controller('car-import')
 export class CarImportController {
 
@@ -19,6 +20,8 @@ async importData(@UploadedFile() file: Express.Multer.File){
         console.log('Calling addToQueue');
         await this.carImportService.addToQueue(file.path);
         console.log('addToQueue executed');
+        
+          
       } catch (error) {
         console.error('Error in addToQueue:', error);
       }
